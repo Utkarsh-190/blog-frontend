@@ -46,6 +46,52 @@ function Articles() {
       <Typography variant="h4" className={classes.blogTitle}>
         Articles
       </Typography>
+      <Grid container spacing={3}>
+        {blogData.map((data) => {
+          return (
+            <Grid item xs={12} s={6} md={4} key={data.id}>
+              <Card>
+                <CardMedia
+                  component="img"
+                  height="200px"
+                  image={data.imageUrl}
+                  className={classes.media}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {data.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Lizards are a widespread group of squamate reptiles, with
+                    over 6,000 species, ranging across all continents except
+                    Antarctica
+                  </Typography>
+                </CardContent>
+                <CardActions className={classes.cardActions}>
+                  <Box className={classes.author}>
+                    <Avatar />
+                    <Box ml={2}>
+                      <Typography variant="subtitle2" component="p">
+                        Baba Tunde
+                      </Typography>
+                      <Typography
+                        variant="subtitle2"
+                        component="p"
+                        color="textSecondary"
+                      >
+                        December 12th 2021
+                      </Typography>
+                    </Box>
+                  </Box>
+                  <Box>
+                    <BookmarkBorder />
+                  </Box>
+                </CardActions>
+              </Card>
+            </Grid>
+          );
+        })}
+      </Grid>
     </Container>
   );
 }
