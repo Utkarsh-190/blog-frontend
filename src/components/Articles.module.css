@@ -16,3 +16,8 @@
 .author {
   display: flex;
 }
+
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+}

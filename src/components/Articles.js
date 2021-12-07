@@ -10,6 +10,7 @@ import {
   CardActions,
   Box,
   Avatar,
+  Pagination,
 } from "@mui/material";
 import BookmarkBorder from "@mui/icons-material/BookmarkBorder";
 
@@ -49,7 +50,7 @@ function Articles() {
       <Grid container spacing={3}>
         {blogData.map((data) => {
           return (
-            <Grid item xs={12} s={6} md={4} key={data.id}>
+            <Grid item xs={12} sm={6} md={4} key={data.id}>
               <Card>
                 <CardMedia
                   component="img"
@@ -92,6 +93,9 @@ function Articles() {
           );
         })}
       </Grid>
+      <Box my={4} className={classes.paginationContainer}>
+        <Pagination count={10} color="primary" />
+      </Box>
     </Container>
   );
 }
